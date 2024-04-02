@@ -102,21 +102,29 @@ def generateImage(character):
 		x = image.x
 		y = highestY + 1
 		# Side horn
+		if "latin_small_letter_a_with_grave" == character["name"]:
+			print(diacritic)
 		if character["diacritic"] == "horn":
 			x = furthestX + 1
 			y = highestY - 2
+		# Dot below
+		elif character["diacritic"] == "dot_below":
+			y = image.y - 2
 		elif "diacriticSpace" in character:
 			y += int(character["diacriticSpace"]) - 1
 		image = image | imageFromArray(arr, x, y)
 	if "additionalDiacritic" in character:
-		diacritic = diacritics[character["diacritic"]]
-		arr = diacritic["pixels"]
+		additionalDiacritic = diacritics[character["additionalDiacritic"]]
+		arr = additionalDiacritic["pixels"]
 		x = image.x
-		y = highestY + 1
+		y = highestY - 1
 		# Side horn
 		if character["additionalDiacritic"] == "horn":
 			x = furthestX + 1
 			y = highestY - 2
+		# Dot below
+		if character["additionalDiacritic"] == "dot_below":
+			y = image.y + 3
 		elif "aditionalDiacriticSpace" in character:
 			y += int(character["aditionalDiacriticSpace"]) - 1
 		image = image | imageFromArray(arr, x, y)

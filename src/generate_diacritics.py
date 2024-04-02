@@ -11,6 +11,9 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
+import json
+
+
 def generateDiacritics(characters, diacritics):
     # Create dictionaries for faster lookup
     charactersByName = {}
@@ -32,28 +35,35 @@ def generateDiacritics(characters, diacritics):
         # Get the diacritic name
         splitOnWith = line.split("WITH")
         diacritic = splitOnWith[1].split(';')[0].strip().lower().replace(" ", "_")
-        additionalDiacritic = str()
+        additionalDiacritic = ""
         if "_and_" in diacritic and not diacritic in diacriticsByCodepoint:
             additionalDiacritic = diacritic.split('_and_')[1]
             diacritic = diacritic.split('_and_')[0]
         name = splitOnWith[0].split(';')[1].strip().lower().replace(" ", "_")
         newName = name + "_with_" + diacritic
-        if additionalDiacritic:
+        if len(additionalDiacritic) > 0:
             newName = newName + "_and_" + additionalDiacritic
-        if not diacritic in diacriticsByCodepoint or not name in charactersByName or newName in charactersByName:
+
+        if "small_letter_a" in newName:
+            print(newName)
+        if newName in charactersByName or not diacritic in diacriticsByCodepoint or (additionalDiacritic and not additionalDiacritic in diacriticsByCodepoint) or not name in charactersByName:
             continue
+        if "small_letter_a" in newName:
+            print("PASS")
         codepoint = int(line.split(";")[0].strip(), 16)
         # Store in a dictionary for serialization
         char = {}
         char["character"] = chr(codepoint)
-        char["name"] = name + "_with_" + diacritic
+        char["name"] = newName
         char["codepoint"] = codepoint
         char["reference"] = charactersByName[name]
         char["diacritic"] = diacritic
         char["diacriticSpace"] = 1
-        if additionalDiacritic:
+        if len(additionalDiacritic) > 0:
             char["additionalDiacritic"] = additionalDiacritic
             char["aditionalDiacriticSpace"] = 1
+        if "small_letter_a" in newName:
+            print(char)
         charList.append(char)
 
     for c in charList:
