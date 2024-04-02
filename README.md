@@ -8,6 +8,8 @@ Forked from [Monocraft](https://github.com/IdreesInc/Monocraft)
 - Special diarictics combination with the same look on Minecraft.
 - Support Vietnamese characters.
 
+![image](https://github.com/aquapaka/Pixelcraft/assets/84399613/d9ea9a52-6283-403a-86b2-2365a753f896)
+
 ## Description
 
 The monospaced font for developers who like Minecraft a bit _too_ much.
