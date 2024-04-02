@@ -32,8 +32,14 @@ def generateDiacritics(characters, diacritics):
         # Get the diacritic name
         splitOnWith = line.split("WITH")
         diacritic = splitOnWith[1].split(';')[0].strip().lower().replace(" ", "_")
+        additionalDiacritic = str()
+        if "_and_" in diacritic and not diacritic in diacriticsByCodepoint:
+            additionalDiacritic = diacritic.split('_and_')[1]
+            diacritic = diacritic.split('_and_')[0]
         name = splitOnWith[0].split(';')[1].strip().lower().replace(" ", "_")
         newName = name + "_with_" + diacritic
+        if additionalDiacritic:
+            newName = newName + "_and_" + additionalDiacritic
         if not diacritic in diacriticsByCodepoint or not name in charactersByName or newName in charactersByName:
             continue
         codepoint = int(line.split(";")[0].strip(), 16)
@@ -45,6 +51,9 @@ def generateDiacritics(characters, diacritics):
         char["reference"] = charactersByName[name]
         char["diacritic"] = diacritic
         char["diacriticSpace"] = 1
+        if additionalDiacritic:
+            char["additionalDiacritic"] = additionalDiacritic
+            char["aditionalDiacriticSpace"] = 1
         charList.append(char)
 
     for c in charList:

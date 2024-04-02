@@ -93,17 +93,32 @@ def generateImage(character):
 		other = generateImage(charactersByCodepoint[character["reference"]])
 		kw.update(other[1])
 		image = image | other[0]
+
+	furthestX = findFurthestX(image)
+	highestY = findHighestY(image)
 	if "diacritic" in character:
 		diacritic = diacritics[character["diacritic"]]
 		arr = diacritic["pixels"]
 		x = image.x
-		y = findHighestY(image) + 1
+		y = highestY + 1
 		# Side horn
 		if character["diacritic"] == "horn":
-			x = findFurthestX(image) + 1
-			y = findHighestY(image) - 2
+			x = furthestX + 1
+			y = highestY - 2
 		elif "diacriticSpace" in character:
 			y += int(character["diacriticSpace"]) - 1
+		image = image | imageFromArray(arr, x, y)
+	if "additionalDiacritic" in character:
+		diacritic = diacritics[character["diacritic"]]
+		arr = diacritic["pixels"]
+		x = image.x
+		y = highestY + 1
+		# Side horn
+		if character["additionalDiacritic"] == "horn":
+			x = furthestX + 1
+			y = highestY - 2
+		elif "aditionalDiacriticSpace" in character:
+			y += int(character["aditionalDiacriticSpace"]) - 1
 		image = image | imageFromArray(arr, x, y)
 	return (image, kw)
 
