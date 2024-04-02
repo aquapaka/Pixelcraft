@@ -1,5 +1,15 @@
 # Pixelcraft
 
+Forked from [Monocraft](https://github.com/IdreesInc/Monocraft)
+
+## What's better?
+
+- Better support for multiple diacritics combination.
+- Special diarictics combination with the same look on Minecraft.
+- Support Vietnamese characters.
+
+## Description
+
 The monospaced font for developers who like Minecraft a bit _too_ much.
 
 *Notice: This project is not affiliated with Minecraft or Mojang in any way and is exclusively a fan project. This font emulates the typeface of the font used in the Minecraft UI, but it does not include any assets or font files from the original game.*
@@ -13,3 +23,5 @@ Download the most recent `Pixelcraft.ttf` file from the [Releases](https://githu
 ## How to use
 
 After following the installation instructions up above, simply select the "Pixelcraft" font (note the space) in any application that supports custom fonts. You might need to restart the application or your computer for the font to appear.
+
+Specific name to use as Fontfamily: `Pixelcraft`
