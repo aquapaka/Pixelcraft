@@ -17919,5 +17919,33 @@
 		],
 		"group": "cjk_symbols_and_punctuation",
 		"character": "〒"
+	},
+	{
+		"character": "đ",
+		"name": "latin_small_letter_d_with_stroke",
+		"codepoint": 273,
+		"pixels": [
+			[0, 0, 0, 0, 1, 0],
+			[0, 0, 1, 1, 1, 1],
+			[0, 0, 0, 0, 1, 0],
+			[0, 1, 1, 0, 1, 0],
+			[1, 0, 0, 1, 1, 0],
+			[1, 0, 0, 0, 1, 0],
+			[0, 1, 1, 1, 1, 0]
+		]
+	},
+	{
+		"character": "Đ",
+		"name": "latin_capital_letter_d_with_stroke",
+		"codepoint": 272,
+		"pixels": [
+			[0, 1, 1, 1, 1, 0],
+			[0, 1, 0, 0, 0, 1],
+			[1, 1, 1, 1, 0, 1],
+			[0, 1, 0, 0, 0, 1],
+			[0, 1, 0, 0, 0, 1],
+			[0, 1, 0, 0, 0, 1],
+			[0, 1, 1, 1, 1, 0]
+		]
 	}
 ]
