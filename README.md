@@ -2,6 +2,15 @@
 
 Forked from [Monocraft](https://github.com/IdreesInc/Monocraft)
 
+## Description
+
+The monospaced font for developers who like Minecraft a bit _too_ much.
+
+*Notice: This project is not affiliated with Minecraft or Mojang in any way and is exclusively a fan project. This font emulates the typeface of the font used in the Minecraft UI, but it does not include any assets or font files from the original game.*
+
+![image](https://github.com/aquapaka/Pixelcraft/assets/84399613/86942fe5-a027-4721-9e1b-7ae382560a02)
+![image](https://github.com/aquapaka/Pixelcraft/assets/84399613/df47f879-b001-4ce0-9fb1-b6a6425f8dbd)
+
 ## What's better?
 
 - Better support for multiple diacritics combination.
@@ -9,12 +18,6 @@ Forked from [Monocraft](https://github.com/IdreesInc/Monocraft)
 - Support Vietnamese characters.
 
 ![image](https://github.com/aquapaka/Pixelcraft/assets/84399613/d9ea9a52-6283-403a-86b2-2365a753f896)
-
-## Description
-
-The monospaced font for developers who like Minecraft a bit _too_ much.
-
-*Notice: This project is not affiliated with Minecraft or Mojang in any way and is exclusively a fan project. This font emulates the typeface of the font used in the Minecraft UI, but it does not include any assets or font files from the original game.*
 
 ## How to install
 
