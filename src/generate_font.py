@@ -165,4 +165,4 @@ def drawImage(image, pen, *, dx=0, dy=0):
 		pen.closePath()
 
 generateFont()
-# generateExamples(characters, ligatures, charactersByCodepoint)
+generateExamples(characters, ligatures, charactersByCodepoint)

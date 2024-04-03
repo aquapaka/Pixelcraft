@@ -12,7 +12,7 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 def generateExamples(characters, ligatures, charactersByCodepoint):
-	terminalOutput = 26*"-" + " Monocraft " + 26*"-"
+	terminalOutput = 26*"-" + " Pixelcraft " + 26*"-"
 	index = 0
 	for character in characters:
 		if character["codepoint"] == 32:
@@ -24,7 +24,7 @@ def generateExamples(characters, ligatures, charactersByCodepoint):
 
 	print(terminalOutput)
 
-	characterOutput = "--- Monocraft ---\n\n"
+	characterOutput = "--- Pixelcraft ---\n\n"
 	for i in range(65, 91):
 		characterOutput += chr(i) + " "
 	characterOutput += "\n"
@@ -60,6 +60,6 @@ def generateExamples(characters, ligatures, charactersByCodepoint):
 		output = 5 * " " + ''.join(map(lambda codepoint: chr(codepoint), ligature['sequence']))
 		ligatureOutput += "\n" + start + "->" + output
 
-	f = open("../examples/glyphs.txt", "w")
+	f = open("../examples/glyphs.txt", "w", encoding="utf-8")
 	f.write(characterOutput + 2*"\n" + ligatureOutput)
 	f.close()
