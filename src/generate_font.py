@@ -39,7 +39,7 @@ def generateFont():
 	pixelcraft.fullname = "Pixelcraft"
 	pixelcraft.copyright = "Aquapaka, https://github.com/aquapaka/Pixelcraft"
 	pixelcraft.encoding = "UnicodeFull"
-	pixelcraft.version = "1.0"
+	pixelcraft.version = "1.1"
 	pixelcraft.weight = "Regular"
 	pixelcraft.ascent = PIXEL_SIZE * 8
 	pixelcraft.descent = PIXEL_SIZE
