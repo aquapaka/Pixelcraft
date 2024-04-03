@@ -102,8 +102,6 @@ def generateImage(character):
 		x = image.x
 		y = highestY + 1
 		# Side horn
-		if "latin_small_letter_a_with_grave" == character["name"]:
-			print(diacritic)
 		if character["diacritic"] == "horn":
 			x = furthestX + 1
 			y = highestY - 2

@@ -43,13 +43,8 @@ def generateDiacritics(characters, diacritics):
         newName = name + "_with_" + diacritic
         if len(additionalDiacritic) > 0:
             newName = newName + "_and_" + additionalDiacritic
-
-        if "small_letter_a" in newName:
-            print(newName)
         if newName in charactersByName or not diacritic in diacriticsByCodepoint or (additionalDiacritic and not additionalDiacritic in diacriticsByCodepoint) or not name in charactersByName:
             continue
-        if "small_letter_a" in newName:
-            print("PASS")
         codepoint = int(line.split(";")[0].strip(), 16)
         # Store in a dictionary for serialization
         char = {}
@@ -62,8 +57,6 @@ def generateDiacritics(characters, diacritics):
         if len(additionalDiacritic) > 0:
             char["additionalDiacritic"] = additionalDiacritic
             char["aditionalDiacriticSpace"] = 1
-        if "small_letter_a" in newName:
-            print(char)
         charList.append(char)
 
     for c in charList:
